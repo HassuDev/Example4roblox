@@ -1,0 +1,20 @@
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Controls = require(LocalPlayer.PlayerScripts.PlayerModule):GetControls()
+local player = game.Players.LocalPlayer
+local Character = player.Character or player.CharacterAdded:Wait()
+
+Controls:Disable()
+
+local cam = game.Workspace.CurrentCamera
+local focuspart = game.Workspace:WaitForChild("Focuspartcontainer").focuspart
+
+
+	for i,v in pairs(Character:GetDescendants()) do -- loop through everything in the character
+		if v:IsA("BasePart") or v:IsA("Decal") then -- if it is a part
+			v.Transparency = 1 -- make it invisible
+		end
+	end
+
+cam.CameraType = Enum.CameraType.Scriptable
+cam.CFrame = focuspart.CFrame
+cam.FieldOfView = 25

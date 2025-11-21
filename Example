@@ -9,9 +9,9 @@ local cam = game.Workspace.CurrentCamera
 local focuspart = game.Workspace:WaitForChild("Focuspartcontainer").focuspart
 
 
-	for i,v in pairs(Character:GetDescendants()) do -- loop through everything in the character
-		if v:IsA("BasePart") or v:IsA("Decal") then -- if it is a part
-			v.Transparency = 1 -- make it invisible
+	for i,v in pairs(Character:GetDescendants()) do 
+		if v:IsA("BasePart") or v:IsA("Decal") then 
+			v.Transparency = 1 
 		end
 	end
 
